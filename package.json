@@ -2,14 +2,17 @@
   "name": "eBlog",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:Steryn/eBlog.git",
-  "author": "liusiyu <liusiyu@basestonedata.com>",
+  "repository": "git@github.com:Steryn/Steryn.git",
+  "author": "steryn <steryn@qq.com>",
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "gh-pages -d docs/.vuepress/dist",
+    "commit": "yarn build && yarn deploy"
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "vuepress": "^1.8.2"
   }
 }
