@@ -6,6 +6,7 @@ module.exports = {
   base: '/blog/', // 配合部署项目
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: 'Last Updated',
+  base:'/eBlog',
   themeConfig: {
     //主题配置
     logo: '/img/logo.jpg',
