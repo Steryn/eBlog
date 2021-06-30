@@ -2,7 +2,7 @@ module.exports = {
   title: '个人博客', //标题
   keywords: '前端开发',
   description: '前端开发 个人博客',
-  repo: 'https://github.com/zeroonbush/blog.git', //仓库地址
+  repo: 'https://github.com/steryn/blog.git', //仓库地址
   base: '/blog/', // 配合部署项目
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: 'Last Updated',
@@ -25,7 +25,7 @@ module.exports = {
           { text: 'June', link: '/2020/6/' },
         ],
       },
-      { text: 'github', link: 'https://github.com/zeroonbush/blog.git' },
+      { text: 'github', link: 'https://github.com/steryn/blog.git' },
     ],
     sidebar: {
       //侧边拦
