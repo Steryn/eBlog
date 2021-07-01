@@ -3,7 +3,7 @@ module.exports = {
   keywords: '前端开发',
   description: '前端开发 个人博客',
   repo: 'https://github.com/steryn/blog.git', //仓库地址
-  base: '/blog/', // 配合部署项目
+  base: '/eBlog/', // 配合部署项目
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: 'Last Updated',
   base:'/eBlog',
