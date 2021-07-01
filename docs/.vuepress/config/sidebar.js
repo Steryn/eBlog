@@ -1,9 +1,16 @@
 module.exports = {
+  '/docs/': [
+    {
+      title: '文档',
+      collapsable: false,
+      children: [{ title: '介绍', path: '/docs/introduce' }],
+    },
+  ],
   '/js_docs/': [
     {
-      title: '测试',
+      title: '目录',
       collapsable: false,
-      children: [{ title: '测试', path: '/js_docs/js' }],
+      children: [{ title: '指南', path: '/js_docs/guide' }],
     },
   ],
   // '/css_docs/': [],

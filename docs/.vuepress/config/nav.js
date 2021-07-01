@@ -1,6 +1,7 @@
 module.exports = [
   //导航栏
   { text: '首页', link: '/' },
+  { text: 'DOC', link: '/docs/' },
   { text: 'JS', link: '/js_docs/' },
   { text: 'CSS', link: '/css_docs/' },
   { text: 'Vue', link: '/vue_docs/' },

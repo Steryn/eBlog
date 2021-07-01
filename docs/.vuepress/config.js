@@ -9,13 +9,13 @@ module.exports = {
     lineNumbers: true, // 代码块显示行号
   },
   lastUpdated: 'Last Updated',
-  displayAllHeaders: true, //显示全部标题，false显示当前活动页标题
+  displayAllHeaders: false, //显示全部标题，false显示当前活动页标题
   search: false, //禁用搜索框
   themeConfig: {
     //主题配置
     logo: '/img/logo.jpg',
-    sidebar: 'auto',
-    sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
+    // sidebar: 'auto',
+    // sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
     nav: require('./config/nav.js'),
     sidebar: require('./config/sidebar.js'),
