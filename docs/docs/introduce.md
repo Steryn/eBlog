@@ -1,52 +1,105 @@
-## 文档1
+## 正则
 
-### :star2:表格
+## RegExp 对象方法
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+在 JavaScript 中，RegExp 对象是一个预定义了属性和方法的正则表达式对象。
 
-### :star2:表格
+### test()
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+test() 方法用于检测一个字符串是否匹配某个模式，
+如果字符串中含有匹配的文本，则返回 true，否则返回 false。
 
-### :star2:表格
+```
+var patt = /e/;
+patt.test("The best things in life are free!");
+// true
+```
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+### exec()
 
+exec() 方法用于检索字符串中的正则表达式的匹配。
+该函数返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
 
-## 文档2
+### toString()
 
-### :star2:表格
+返回正则表达式的字符串值：
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+## 正则表达式的 String 对象的方法
 
-### :star2:表格
+### search()
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，并返回子串的起始位置。如果没有找到任何匹配的子串，则返回 -1。
 
-### :star2:表格
+### replace()
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。
+
+### match()
+
+在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+
+```
+var str="The rain in SPAIN stays mainly in the plain";
+var n=str.match(/ain/g);
+ain,ain,ain
+```
+
+:::warning
+注意： match() 方法将检索字符串 String Object，以找到一个或多个与 regexp 匹配的文本。这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。如果 regexp 没有标志 g，那么 match() 方法就只能在 stringObject 中执行一次匹配。如果没有找到任何匹配的文本， match() 将返回 null。否则，它将返回一个数组，其中存放了与它找到的匹配文本有关的信息。
+:::
+
+## 常用正则列表
+
+外架子
+
+```
+function isDecimal(strValue )  {
+  //插入
+  return  objRegExp.test(strValue);
+}
+```
+
+```
+<!-- n位的数字 -->
+var reg=/^\d{n}$/;
+
+<!-- 至少n位的数字 -->
+var reg=/^\d{n,}$/;
+
+<!-- 带1-2位小数的正数或负数 -->
+var reg=/^(\-)?\d+(\.\d{1,2})?$/;
+
+<!-- 是否带有小数 -->
+var  objRegExp= /^\d+\.\d+$/;
+
+<!-- 校验是否全由8位数字组成 -->
+var reg=/^[0-9]{8}$/;   定义验证表达式
+
+<!-- 校验是否中文名称组成 -->
+var reg=/^[\u4E00-\u9FA5]{2,4}$/;   定义验证表达式
+
+<!-- 校验电话码格式 -->
+var reg= /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
+/^1[3|4|5|7|8]\d{9}$/
+/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/
+
+<!-- 校验邮件地址是否合法 -->
+var reg=/^\w+@[a-zA-Z0-9]{2,10}(?:\.[a-z]{2,4}){1,3}$/;
+
+<!-- url域名： -->
+[a-zA-Z0-9][-a-zA-Z0-9]{0,62}(/.[a-zA-Z0-9][-a-zA-Z0-9]{0,62})+/.?
+
+<!-- InternetURL -->
+[a-zA-z]+://[^\s]* 或 ^http://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$
+
+<!-- 身份证号 -->
+15或18位身份证：^\d{15}|\d{18}$
+15位身份证：^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$
+18位身份证：^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$
+
+<!-- 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)： -->
+^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}$
+
+<!-- * 不小于8位的字符同时包含数字、大小写字母、特殊： -->
+/^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{8,}$/
+```
